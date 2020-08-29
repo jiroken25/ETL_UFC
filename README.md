@@ -2,6 +2,7 @@
 # Project Name: ETL_UFC
 
 1. Data source
+
 UFC match data:
 up to 8 Jun 2019
 https://www.kaggle.com/rajeevw/ufcdata?select=data.csv
@@ -38,13 +39,28 @@ For web-page : Use Splinter and Beautiful soup. Get all URL info from the webpag
 
 4. Load
 
-<Dan's section>
+To Postgres
+1. SQL create table as described in 5
+2. Use SQLalchemy to create engine and upload df transformed in 3.
+3. Confirm the data is uploaded correctly.
+
+to SQLite
+1. Create Base and class for tables.
+2. Use SQLalchemy to create engine and upload df transformed in 3.
+3. Confirm the data is uploaded correctly.
 
 
 5. Data Scheme
-Fight table: Date, Location, weight_class, winner name, and loser name
-Fighter table : fighter_name, height, weight
-New Fight Table:  Date, Location, weight_class, winner name, and loser name
+match table:id(type:int, primary key) ,Date(type:date), Location(type:str), weight_class(type:str), winner name(type:str), and loser name(type:str)
+Fighter table :id(type:int, primary key),fighter_name(type:str), height(float), weight(float)
+match new Table:id(type:int, primary key) ,Date(type:date), Location(type:str), weight_class(type:str), winner name(type:str), and loser name(type:str)
 
-Using JOIN we could show winner and loser height /weight and could compare.
->>>>>>> beb97796f2740c884347b505d956c74a5c492948
+
+6. Data utilization
+
+* Using JOIN we could show winner and loser height /weight and could compare.
+* Using insert to add new match information to original match table
+
+
+
+
