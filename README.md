@@ -76,8 +76,7 @@ c. Confirm the data is uploaded correctly.
 
 Using a tool https://app.quickdatabasediagrams.com/#/d/QgHyfc
 
-* match table
----
+#### match table
 
 id int PK
 
@@ -94,8 +93,8 @@ loser_fighter_id int FK >- fighter.id
 ---
 
 
-* fighter table
----
+#### fighter table
+
 
 id int PK
 
