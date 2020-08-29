@@ -21,20 +21,39 @@ https://www.kaggle.com/rajeevw/ufcdata?select=raw_fighter_details.csv
 
 3. Transform
 
-### fight table
+#### match data
 * Winner is given by color. 
 => Identify winner and loser name and store them in pandas dataframe.
+ 
+ If color is blue, put blue fighter name into winner, and red fighter name into loser. (for loop)
+
 * Some fights have no winner/loser 
 => Drop those draw or no-winner fights
-* Choose only required column
-=> Date, Location, weight_class, winner name, and loser name were saved in pandas dataframe.
 
-### fighter info table
+Using df loc to drop the data of no winner.
+
+* Insert data scraped from web into csv based df.
+
+Using pd.concat to insert data from web into csv based data. 
+
+* In the scheme, winner_fighter_id, loser_fighter_id would be a foreign key to refer to fighter table. To get id, merge match data df with fighter_table to conver actual name into fighter_id. 
+
+* Make alignment of column name with DB table 
+
+
+
+
+
+#### fighter info table
 * Weight and Height info is given in American Unit.
 => Converted them into cm / kg
 
+The data was given like 5' 6". Split the string of feet/inch value and identified 5 and 6. Using this two value calcuate, cm. kg is more simple, just remove lbs and calculate kg.
+
+
+
 * Choose only required columne
-=> fighter_name	height	weight were saved in pandas dataframe.
+=> fighter_name	height	weight were saved in pandas dataframe to make alignment of column name with DB table.
 
 
 4. Load
@@ -58,18 +77,26 @@ c. Confirm the data is uploaded correctly.
 
 5. Data Scheme
 
-* match table:id(type:int, primary key) ,Date(type:date), Location(type:str), weight_class(type:str), winner name(type:str), and loser name(type:str)
+Using a tool https://app.quickdatabasediagrams.com/#/d/QgHyfc
 
-* Fighter table :id(type:int, primary key),fighter_name(type:str), height(float), weight(float)
+* match table
 
-* match new Table:id(type:int, primary key) ,Date(type:date), Location(type:str), weight_class(type:str), winner name(type:str), and loser name(type:str)
+-
+id int PK
+date date
+location varchar
+weight_class varcahr
+winner_fighter_id int FK >- fighter.id
+loser_fighter_id int FK >- fighter.id
 
 
-6. Data utilization
 
-* Using JOIN we could show winner and loser height /weight and could compare.
-* Using insert to add new match information to original match table
-
+* fighter table
+-
+id int PK
+name varchar
+height float
+weight float
 
 
 
