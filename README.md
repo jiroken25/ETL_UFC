@@ -57,6 +57,7 @@ c. Confirm the data is uploaded correctly.
 
 
 5. Data Scheme
+
 match table:id(type:int, primary key) ,Date(type:date), Location(type:str), weight_class(type:str), winner name(type:str), and loser name(type:str)
 Fighter table :id(type:int, primary key),fighter_name(type:str), height(float), weight(float)
 match new Table:id(type:int, primary key) ,Date(type:date), Location(type:str), weight_class(type:str), winner name(type:str), and loser name(type:str)
