@@ -1,7 +1,7 @@
 
 # Project Name: ETL_UFC Project Member: Dan, Kenjiro
 
-1. Data source
+## 1. Data source
 
 * UFC match data:
 up to 8 Jun 2019
@@ -13,13 +13,13 @@ http://www.ufcstats.com/statistics/events/completed?page=all
 * UFC fighter data:
 https://www.kaggle.com/rajeevw/ufcdata?select=raw_fighter_details.csv
 
-2. Data extract method
+## 2. Data extract method
 
 * For CSV file: Use Pandas to read CSV
 * For web-page : Use Splinter and Beautiful soup. Get all URL info from the webpage and in each page, identify winner and loser, and weight_class. When getting the information, get data type alignment with fight table so that in future we could insert data into the table. 
 
 
-3. Transform
+## 3. Transform
 
 #### match data
 * Winner is given by color. 
@@ -41,9 +41,6 @@ Using pd.concat to insert data from web into csv based data.
 * Make alignment of column name with DB table 
 
 
-
-
-
 #### fighter info table
 * Weight and Height info is given in American Unit.
 => Converted them into cm / kg
@@ -56,7 +53,7 @@ The data was given like 5' 6". Split the string of feet/inch value and identifie
 => fighter_name	height	weight were saved in pandas dataframe to make alignment of column name with DB table.
 
 
-4. Load
+## 4. Load
 
 * To Postgres
 
@@ -75,7 +72,7 @@ b. Use SQLalchemy to create engine and upload df transformed in 3.
 c. Confirm the data is uploaded correctly.
 
 
-5. Data Scheme
+## 5. Data Scheme
 
 Using a tool https://app.quickdatabasediagrams.com/#/d/QgHyfc
 
