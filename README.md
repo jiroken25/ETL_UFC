@@ -80,23 +80,33 @@ c. Confirm the data is uploaded correctly.
 Using a tool https://app.quickdatabasediagrams.com/#/d/QgHyfc
 
 * match table
+---
 
--
 id int PK
+
 date date
+
 location varchar
+
 weight_class varcahr
+
 winner_fighter_id int FK >- fighter.id
+
 loser_fighter_id int FK >- fighter.id
 
+---
 
 
 * fighter table
--
+---
+
 id int PK
+
 name varchar
+
 height float
+
 weight float
 
-
+---
 
