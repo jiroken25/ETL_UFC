@@ -3,20 +3,20 @@
 
 1. Data source
 
-UFC match data:
+* UFC match data:
 up to 8 Jun 2019
 https://www.kaggle.com/rajeevw/ufcdata?select=data.csv
 
-after 8 June 2019 to 25 August 2020
+* after 8 June 2019 to 25 August 2020
 http://www.ufcstats.com/statistics/events/completed?page=all
 
-UFC fighter data:
+* UFC fighter data:
 https://www.kaggle.com/rajeevw/ufcdata?select=raw_fighter_details.csv
 
 2. Data extract method
 
-For CSV file: Use Pandas to read CSV
-For web-page : Use Splinter and Beautiful soup. Get all URL info from the webpage and in each page, identify winner and loser, and weight_class. When getting the information, get data type alignment with fight table so that in future we could insert data into the table. 
+* For CSV file: Use Pandas to read CSV
+* For web-page : Use Splinter and Beautiful soup. Get all URL info from the webpage and in each page, identify winner and loser, and weight_class. When getting the information, get data type alignment with fight table so that in future we could insert data into the table. 
 
 
 3. Transform
@@ -39,15 +39,15 @@ For web-page : Use Splinter and Beautiful soup. Get all URL info from the webpag
 
 4. Load
 
-To Postgres
-1. SQL create table as described in 5
-2. Use SQLalchemy to create engine and upload df transformed in 3.
-3. Confirm the data is uploaded correctly.
+T<o Postgres>
+a. SQL create table as described in 5
+b. Use SQLalchemy to create engine and upload df transformed in 3.
+c. Confirm the data is uploaded correctly.
 
-to SQLite
-1. Create Base and class for tables.
-2. Use SQLalchemy to create engine and upload df transformed in 3.
-3. Confirm the data is uploaded correctly.
+<to SQLite>
+a. Create Base and class for tables.
+b. Use SQLalchemy to create engine and upload df transformed in 3.
+c. Confirm the data is uploaded correctly.
 
 
 5. Data Scheme
