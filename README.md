@@ -40,6 +40,7 @@ https://www.kaggle.com/rajeevw/ufcdata?select=raw_fighter_details.csv
 4. Load
 
 * To Postgres
+
 a. SQL create table as described in 5
 
 b. Use SQLalchemy to create engine and upload df transformed in 3.
@@ -47,6 +48,7 @@ b. Use SQLalchemy to create engine and upload df transformed in 3.
 c. Confirm the data is uploaded correctly.
 
 * to SQLite
+
 a. Create Base and class for tables.
 
 b. Use SQLalchemy to create engine and upload df transformed in 3.
